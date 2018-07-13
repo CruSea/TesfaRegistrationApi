@@ -28,7 +28,7 @@ class RegistrationController extends Controller
                     $phone = "251".substr($post_data['phone'],strlen($post_data['phone']) - 9, 9);
                     $send_data = array();
                     $send_data['campaign_id'] = 1;
-                    $send_data['message'] = "ውድ ".$post_data['full_name']."\n እንኳን ወደ ተስፋ ልዩ ዝግጅት በደህና መጡ!\n በዚህ ልዮ ፕሮግራም ";
+                    $send_data['message'] = "ውድ ".$post_data['full_name']." እንኳን ወደ ተስፋ ልዩ ዝግጅት በደህና መጡ!"."\nበዚህ ልዮ ፕሮግራም ለመሳተፍ በሚገባ ተመዝግበዋል!\n".'"እግዚአብሔርን በመተማመን የሚጠባበቁ ግን ኃይላቸውን ያድሳሉ፤ እንደ ንስር በክንፍ ይወጣሉ፤ ይሮጣሉ፥ አይታክቱም፤ ይሄዳሉ፥ አይደክሙም።" ኢሳ40:31'."\nGCME";
                     $send_data['sent_to'] = $phone;
                     $response = $this->negaritManager->sendPostRequest("api_request/sent_message?API_KEY=".$this->negarit_api_key, json_encode($send_data));
                     $response_data = json_decode($response);
