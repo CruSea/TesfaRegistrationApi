@@ -14,6 +14,7 @@ class NegaritSMSController extends Controller
     public function __construct()
     {
         $this->negarit_api_url = "http://api.negarit.net/api/";
+//        $this->negarit_api_url = "http://127.0.0.1:4444/api/";
     }
 
     public function sendPostRequest($request_route, $send_post_data){
